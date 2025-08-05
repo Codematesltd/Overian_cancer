@@ -19,7 +19,7 @@
           <a href="{{ url_for('predict') }}" class="hover:text-blue-600">Prediction</a>
           <a href="{{ url_for('about') }}" class="hover:text-blue-600">About Us</a>
           <a href="{{ url_for('contact') }}" class="hover:text-blue-600">Contact</a>
-          <a href="#" class="text-gray-400">Sign Out (aeaeae)</a>
+
         </nav>
       </div>
     </header>
@@ -31,8 +31,8 @@
                 <!-- Basic Information -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Age</label>
-                        <input type="number" id="age" required min="0" max="120" step="1"
+                        <label class="block text-sm font-medium text-gray-700 mb-1" for="age">Age</label>
+                        <input type="number" id="age" name="age" required min="0" max="120" step="1"
                                class="w-full px-4 py-2 border border-gray-300 rounded-md">
                     </div>
                 </div>
@@ -40,53 +40,53 @@
                 <!-- Cancer Markers -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">CA-125 Level</label>
-                        <input type="number" id="CA125" required step="0.01" min="0"
+                        <label class="block text-sm font-medium text-gray-700 mb-1" for="CA125">CA-125 Level</label>
+                        <input type="number" id="CA125" name="CA125" required step="0.01" min="0"
                                class="w-full px-4 py-2 border border-gray-300 rounded-md">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">HE4 Level</label>
-                        <input type="number" id="HE4" required step="0.01" min="0"
+                        <label class="block text-sm font-medium text-gray-700 mb-1" for="HE4">HE4 Level</label>
+                        <input type="number" id="HE4" name="HE4" required step="0.01" min="0"
                                class="w-full px-4 py-2 border border-gray-300 rounded-md">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">CA19-9 Level</label>
-                        <input type="number" id="CA19_9" required step="0.01" min="0"
+                        <label class="block text-sm font-medium text-gray-700 mb-1" for="CA19_9">CA19-9 Level</label>
+                        <input type="number" id="CA19_9" name="CA19-9" required step="0.01" min="0"
                                class="w-full px-4 py-2 border border-gray-300 rounded-md">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">AFP Level</label>
-                        <input type="number" id="AFP" required step="0.01" min="0"
+                        <label class="block text-sm font-medium text-gray-700 mb-1" for="AFP">AFP Level</label>
+                        <input type="number" id="AFP" name="AFP" required step="0.01" min="0"
                                class="w-full px-4 py-2 border border-gray-300 rounded-md">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">GGT Level</label>
-                        <input type="number" id="GGT" required step="0.01" min="0"
+                        <label class="block text-sm font-medium text-gray-700 mb-1" for="GGT">GGT Level</label>
+                        <input type="number" id="GGT" name="GGT" required step="0.01" min="0"
                                class="w-full px-4 py-2 border border-gray-300 rounded-md">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">CEA Level</label>
-                        <input type="number" id="CEA" required step="0.01" min="0"
+                        <label class="block text-sm font-medium text-gray-700 mb-1" for="CEA">CEA Level</label>
+                        <input type="number" id="CEA" name="CEA" required step="0.01" min="0"
                                class="w-full px-4 py-2 border border-gray-300 rounded-md">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">HGB Level</label>
-                        <input type="number" id="HGB" required step="0.01" min="0"
+                        <label class="block text-sm font-medium text-gray-700 mb-1" for="HGB">HGB Level</label>
+                        <input type="number" id="HGB" name="HGB" required step="0.01" min="0"
                                class="w-full px-4 py-2 border border-gray-300 rounded-md">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">ALP Level</label>
-                        <input type="number" id="ALP" required step="0.01" min="0"
+                        <label class="block text-sm font-medium text-gray-700 mb-1" for="ALP">ALP Level</label>
+                        <input type="number" id="ALP" name="ALP" required step="0.01" min="0"
                                class="w-full px-4 py-2 border border-gray-300 rounded-md">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">CA72-4 Level</label>
-                        <input type="number" id="CA72_4" required step="0.01" min="0"
+                        <label class="block text-sm font-medium text-gray-700 mb-1" for="CA72_4">CA72-4 Level</label>
+                        <input type="number" id="CA72_4" name="CA72-4" required step="0.01" min="0"
                                class="w-full px-4 py-2 border border-gray-300 rounded-md">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Calcium (Ca) Level</label>
-                        <input type="number" id="Ca" required step="0.01" min="0"
+                        <label class="block text-sm font-medium text-gray-700 mb-1" for="Ca">Calcium (Ca) Level</label>
+                        <input type="number" id="Ca" name="Ca" required step="0.01" min="0"
                                class="w-full px-4 py-2 border border-gray-300 rounded-md">
                     </div>
                 </div>
@@ -94,36 +94,35 @@
                 <!-- Patient Status -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Menopausal Status</label>
-                        <select id="menopausal_status" required class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                        <label class="block text-sm font-medium text-gray-700 mb-1" for="menopausal_status">Menopausal Status</label>
+                        <select id="menopausal_status" name="menopausal_status" required class="w-full px-4 py-2 border border-gray-300 rounded-md">
                             <option value="">Select status</option>
-                            <option value="0">Pre-menopausal</option>
-                            <option value="1">Post-menopausal</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Family History</label>
-                        <select id="family_history" required class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                        <label class="block text-sm font-medium text-gray-700 mb-1" for="family_history">Family History</label>
+                        <select id="family_history" name="family_history" required class="w-full px-4 py-2 border border-gray-300 rounded-md">
                             <option value="">Select option</option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Smoking Status</label>
-                        <select id="smoking_status" required class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                        <label class="block text-sm font-medium text-gray-700 mb-1" for="smoking_status">Smoking Status</label>
+                        <select id="smoking_status" name="smoking_status" required class="w-full px-4 py-2 border border-gray-300 rounded-md">
                             <option value="">Select status</option>
-                            <option value="never">Never</option>
-                            <option value="former">Former</option>
-                            <option value="current">Current</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Alcohol Consumption</label>
-                        <select id="alcohol" required class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                        <label class="block text-sm font-medium text-gray-700 mb-1" for="alcohol">Alcohol Consumption</label>
+                        <select id="alcohol" name="alcohol" required class="w-full px-4 py-2 border border-gray-300 rounded-md">
                             <option value="">Select option</option>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
                         </select>
                     </div>
                 </div>
@@ -154,9 +153,9 @@
             CA72_4: parseFloat(document.getElementById('CA72_4').value),
             Ca: parseFloat(document.getElementById('Ca').value),
             menopausal_status: document.getElementById('menopausal_status').value,
-            family_history: parseInt(document.getElementById('family_history').value),
+            family_history: document.getElementById('family_history').value,
             smoking_status: document.getElementById('smoking_status').value,
-            alcohol: parseInt(document.getElementById('alcohol').value)
+            alcohol: document.getElementById('alcohol').value
         };
 
         const resultDiv = document.getElementById('result');
@@ -186,77 +185,64 @@
                             ${data.recommendation || ''}
                         </p>
                     </div>`;
-                // Show image upload if high risk
+                // Show LLM confirmation upload if high risk
                 if (data.prediction >= 50) {
                     imageUploadDiv.innerHTML = `
-                        <form id="imageUploadForm" enctype="multipart/form-data" class="mt-6 bg-white p-6 rounded-lg shadow space-y-4">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Upload Histopathological Image</label>
+                        <form id="llmConfirmForm" enctype="multipart/form-data" class="mt-6 bg-white p-6 rounded-lg shadow space-y-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Upload Histopathological Image for LLM Confirmation</label>
                             <input type="file" name="histopath_image" accept="image/*" required class="block w-full mb-4">
-                            <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Upload Image</button>
+                            <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Confirm with LLM</button>
                         </form>
-                        <div id="imageUploadResult" class="mt-4 text-center"></div>
+                        <div id="llmConfirmResult" class="mt-4 text-center"></div>
                     `;
-                    document.getElementById('imageUploadForm').addEventListener('submit', async function(ev) {
+                    document.getElementById('llmConfirmForm').addEventListener('submit', async function(ev) {
                         ev.preventDefault();
-                        const formData = new FormData();
-                        const fileInput = this.querySelector('input[type="file"]');
-                        formData.append('histopath_image', fileInput.files[0]);
-                        const uploadResultDiv = document.getElementById('imageUploadResult');
-                        uploadResultDiv.textContent = 'Uploading...';
+                        const formDataImg = new FormData(this);
+                        formDataImg.append('features', JSON.stringify(formData));
+                        const llmResultDiv = document.getElementById('llmConfirmResult');
+                        llmResultDiv.textContent = 'Contacting LLM...';
                         try {
-                            const resp = await fetch('/upload_image', {
-                                method: 'POST',
-                                body: formData
-                            });
+                            const resp = await fetch('/llm_image_confirm', { method: 'POST', body: formDataImg });
                             const respData = await resp.json();
                             if (respData.success) {
-                                uploadResultDiv.innerHTML = `<span class="text-green-700">Image uploaded successfully!</span>`;
+                                // Fallback if explanation is empty or contains placeholder text
+                                const rawExplanation = (respData.llm_explanation || '').trim();
+                                const explanationText = rawExplanation && !/explanation is not available/i.test(rawExplanation)
+                                  ? rawExplanation
+                                  : 'No detailed explanation available for the image.';
+                                const fallbackNote = /could not analyze the image/i.test(rawExplanation)
+                                  ? '<p class="text-yellow-600 italic mb-4">Note: Analysis based on clinical features only.</p>'
+                                  : '';
+                                llmResultDiv.innerHTML = `
+                                  <div class="bg-white p-6 rounded-lg shadow max-w-2xl mx-auto">
+                                    <h2 class="text-2xl font-bold mb-4 text-gray-800">LLM Analysis & Prediction</h2>
+                                    ${fallbackNote}
+                                    <div class="prose prose-lg text-gray-700 mb-4">
+                                      <h3>Prediction</h3>
+                                      <p>${respData.llm_prediction}</p>
+                                      <h3>Explanation</h3>
+                                      <p>${explanationText}</p>
+                                    </div>
+                                    <img src="${respData.image_url}" alt="Histopathology image" class="rounded mx-auto max-h-64"/>
+                                  </div>
+                                `;
                             } else {
-                                uploadResultDiv.innerHTML = `<span class="text-red-700">Error: ${respData.error}</span>`;
+                                llmResultDiv.innerHTML = `<span class="text-red-600">Error: ${respData.error}</span>`;
                             }
-                        } catch (err) {
-                            uploadResultDiv.innerHTML = `<span class="text-red-700">Error uploading image.</span>`;
+                        } catch {
+                            llmResultDiv.innerHTML = `<span class="text-red-600">Error communicating with LLM.</span>`;
                         }
                     });
-                }
-                // Show LLM analysis upload if medium risk
-                else if (data.prediction >= 20 && data.prediction < 50) {
-                    imageUploadDiv.innerHTML = `
-                        <form id="llmImageUploadForm" enctype="multipart/form-data" class="mt-6 bg-white p-6 rounded-lg shadow space-y-4">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Upload Histopathological Image for AI Analysis</label>
-                            <input type="file" name="histopath_image" accept="image/*" required class="block w-full mb-4">
-                            <button type="submit" class="bg-purple-500 text-white px-6 py-2 rounded hover:bg-purple-600">Analyze Image</button>
-                        </form>
-                        <div id="llmImageUploadResult" class="mt-4 text-center"></div>
-                    `;
-                    document.getElementById('llmImageUploadForm').addEventListener('submit', async function(ev) {
-                        ev.preventDefault();
-                        const formData = new FormData();
-                        const fileInput = this.querySelector('input[type="file"]');
-                        formData.append('histopath_image', fileInput.files[0]);
-                        const uploadResultDiv = document.getElementById('llmImageUploadResult');
-                        uploadResultDiv.textContent = 'Analyzing...';
-                        try {
-                            const resp = await fetch('/analyze_image', {
-                                method: 'POST',
-                                body: formData
-                            });
-                            const respData = await resp.json();
-                            if (respData.success) {
-                                uploadResultDiv.innerHTML = `<span class="text-green-700">AI Summary:<br>${respData.summary}</span>`;
-                            } else {
-                                uploadResultDiv.innerHTML = `<span class="text-red-700">Error: ${respData.error}</span>`;
-                            }
-                        } catch (err) {
-                            uploadResultDiv.innerHTML = `<span class="text-red-700">Error analyzing image.</span>`;
-                        }
-                    });
+                } else {
+                    imageUploadDiv.innerHTML = "";
                 }
             } else {
                 resultDiv.innerHTML = `<span class="text-red-700">Error: ${data.error}</span>`;
+                imageUploadDiv.innerHTML = "";
             }
         } catch (error) {
             resultDiv.innerHTML = `<span class="text-red-700">Error communicating with the server.</span>`;
+            imageUploadDiv.innerHTML = "";
         }
     });
     </script>
