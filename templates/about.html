@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - OvaCare AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navbar -->
+    <header class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <div class="w-6 h-6 bg-blue-500 rounded"></div>
+          <span class="text-lg font-semibold">OvaCare AI</span>
+        </div>
+        <nav class="space-x-6 text-gray-700 text-sm font-medium">
+          <a href="{{ url_for('index') }}" class="hover:text-blue-600">Home</a>
+          <a href="{{ url_for('predict') }}" class="hover:text-blue-600">Prediction</a>
+          <a href="{{ url_for('about') }}" class="hover:text-blue-600">About Us</a>
+          <a href="{{ url_for('contact') }}" class="hover:text-blue-600">Contact</a>
+          <a href="#" class="text-gray-400">Sign Out (aeaeae)</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+      <h2 class="text-3xl font-bold mb-6">About OvaCare AI</h2>
+      <div class="bg-white p-6 rounded-lg shadow space-y-6">
+        <section>
+          <h3 class="text-xl font-semibold mb-3">Our Mission</h3>
+          <p class="text-gray-700">
+            Our mission is to improve early detection and diagnosis of ovarian cancer through advanced AI technology, making healthcare more accessible and accurate for everyone.
+          </p>
+        </section>
+        
+        <section>
+          <h3 class="text-xl font-semibold mb-3">The Technology</h3>
+          <p class="text-gray-700">
+            OvaCare AI utilizes state-of-the-art machine learning algorithms trained on extensive medical datasets to provide accurate cancer risk assessments.
+          </p>
+        </section>
+
+        <section>
+          <h3 class="text-xl font-semibold mb-3">Our Team</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="text-gray-700">
+              <h4 class="font-medium">Medical Experts</h4>
+              <p>Collaboration with leading oncologists and healthcare professionals.</p>
+            </div>
+            <div class="text-gray-700">
+              <h4 class="font-medium">AI Researchers</h4>
+              <p>Expert team of data scientists and machine learning engineers.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
