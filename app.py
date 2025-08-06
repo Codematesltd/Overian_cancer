@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for
+from flask_login import LoginManager, UserMixin, current_user, login_user, logout_user, login_required
 import joblib
 import pandas as pd
 from pathlib import Path
@@ -9,6 +10,29 @@ import together
 import io
 
 app = Flask(__name__)
+app.secret_key = 'ovacare-ai-secret-key'  # Required for session management
+
+# Define a simple User class
+class User(UserMixin):
+    def __init__(self, id, email, password):
+        self.id = id
+        self.email = email
+        self.password = password
+
+# Create a simple user store (replace with database in production)
+users = {
+    "1": User(1, "doctor@example.com", "password123")
+}
+
+# Initialize Flask-Login
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+
+# User loader function for Flask-Login
+@login_manager.user_loader
+def load_user(user_id):
+    return users.get(str(user_id))
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -31,11 +55,70 @@ together.api_key = TOGETHER_API_KEY
 def index():
     return render_template('index.html')  # Directly show index page
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    
+    # Check for signup success message
+    signup_success = request.args.get('signup_success', False) == 'True'
+        
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+        
+        # Find user by email (simplified - normally would search a database)
+        user = next((u for u in users.values() if u.email == email), None)
+        
+        if user and user.password == password:
+            login_user(user)
+            next_page = request.args.get('next', url_for('index'))
+            return redirect(next_page)
+        
+        return render_template('sign_in.html', error='Invalid credentials')
+    
+    return render_template('sign_in.html', error=None, signup_success=signup_success)
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+        
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        confirm_password = request.form.get('confirm_password')
+        
+        # Basic validation
+        if password != confirm_password:
+            return render_template('sign_up.html', error='Passwords do not match')
+            
+        # Check if email is already registered
+        if any(u.email == email for u in users.values()):
+            return render_template('sign_up.html', error='Email already registered')
+            
+        # Create new user (in a real app, would save to database)
+        user_id = str(len(users) + 1)
+        users[user_id] = User(user_id, email, password)
+        
+        # Instead of auto-login, redirect to login page with success message
+        return redirect(url_for('login', signup_success=True))
+        
+    return render_template('sign_up.html')
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
 @app.route('/predict', methods=['GET', 'POST'])
+@login_required  # This decorator ensures the user must be logged in
 def predict():
     if request.method == 'GET':
         return render_template('predict.html')
     
+    # User is authenticated at this point due to login_required
     try:
         data = request.get_json()
         # Build a DataFrame matching the training columns
